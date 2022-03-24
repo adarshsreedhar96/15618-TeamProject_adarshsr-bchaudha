@@ -59,15 +59,13 @@ The difference in the number of cores, as well as the size of L3 cache and RAM, 
 # Schedule
 | Week | Deliverables |
 -----------------------
-| Week 1 |	Literature Survey Complete, and rough outline of the APIs to expose to the user, and the selection of work stealing algorithms + data structures to use to 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-maintain the tasks |
---------------------
-Week 2	Implement a centralized deque from which all threads can steal tasks – and finalize the set of benchmarks to run on
-Week 3	Implement two other strategies – using per-processor queues with both child-first and child-continuation stealing
-Week 4	Run the different strategies on the benchmarks on various machines – GHC, PSC and the Latedays Cluster. Gather and filter the data
-Week 5	Finalize the Library API endpoints, and internally call the relevant algorithms (Integration Phase)
-Week 6	Finalize the Report, Deduce the Set of Parameters to select a logic and possibly add a simple heuristic with rules to select the same.
+Week 1 |	Literature Survey Complete, and rough outline of the APIs to expose to the user, and the selection of work stealing algorithms + data structures to use to 
+maintain the tasks
+Week 2 | Implement a centralized deque from which all threads can steal tasks – and finalize the set of benchmarks to run on
+Week 3 | Implement two other strategies – using per-processor queues with both child-first and child-continuation stealing
+Week 4 | Run the different strategies on the benchmarks on various machines – GHC, PSC and the Latedays Cluster. Gather and filter the data
+Week 5 | Finalize the Library API endpoints, and internally call the relevant algorithms (Integration Phase)
+Week 6 |	Finalize the Report, Deduce the Set of Parameters to select a logic and possibly add a simple heuristic with rules to select the same.
 
 # References:
 [1] Blumofe, R.D. and Leiserson, C.E., 1999. Scheduling multithreaded computations by work stealing. Journal of the ACM (JACM), 46(5), pp.720-748.
