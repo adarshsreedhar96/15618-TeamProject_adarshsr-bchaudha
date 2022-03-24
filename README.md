@@ -1,5 +1,5 @@
 # Dynamic Scheduling with Work Stealing - Framework and Analysis of Different Strategies
-### 15618-TeamProject
+
 ### Adarsh Sreedhar (adarshsr)
 ### Bhakti Chaudhari (bchaudha)
 
