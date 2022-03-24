@@ -1,7 +1,7 @@
-### Dynamic Scheduling with Work Stealing - Framework and Analysis of Different Strategies
-# 15618-TeamProject
-Adarsh Sreedhar (adarshsr)
-Bhakti Chaudhari (bchaudha)
+# Dynamic Scheduling with Work Stealing - Framework and Analysis of Different Strategies
+### 15618-TeamProject
+### Adarsh Sreedhar (adarshsr)
+### Bhakti Chaudhari (bchaudha)
 
 # Summary
 We are going to implement a dynamic scheduling framework with work stealing using different strategies, such as child-first, child-continuation, priority-based, randomly-chosen etc., and analyze their performance on various workloads to determine which strategy is best suited for a type of workload. 
@@ -43,15 +43,13 @@ Beyond Literature Survey, we would heavily reference the Cilk Library for splitt
 [6] introduces Wool, a work-stealing library that is very similar to Cilk, but allows the user to make these calls in C itself, without having to write in a different language or construct (Cilk-5 or Intel TBB). Since we are also planning to provide a simple interface abstracting the multiple implementations of work stealing algorithms, this paper may provide valuable information.
 
 # Goals and Deliverables
-Should Achieve (75%):
-We will implement a task scheduling library that provides APIs for various scheduling algorithms, each of which employ different data-structures to store the tasks, as well as different strategies in stealing work during cases of uneven load distribution. We will employ two data structures – a centralized doubly ended queue as well as a per-task queue.
+#### Should Achieve (75%):
+We will implement a task scheduling library that provides APIs for various scheduling algorithms, each of which employ different data-structures to store the tasks, as well as different strategies in stealing work during cases of uneven load distribution. We will employ two data structures – a centralized doubly ended queue as well as a per-task queue. We will then run these algorithms for various datasets and problem definitions, on different execution unit combinations, and collect and analyze the speedup obtained.
 
-We will then run these algorithms for various datasets and problem definitions, on different execution unit combinations, and collect and analyze the speedup obtained.
-Plan to Achieve (100%):
-We will attempt more data-structures to store the tasks such as priority queues based on custom ranking logic as well as randomized task selection.
+#### Plan to Achieve (100%):
+We will attempt more data-structures to store the tasks such as priority queues based on custom ranking logic as well as randomized task selection.We will perform a deeper analysis of the results obtained on all the algorithms used - results in terms of the speedup obtained, bottleneck observed, cache hit rate, load distribution after work stealing, and then deduce the set of parameters required to be able to choose a specific scheduler for maximum performance.
 
-We will perform a deeper analysis of the results obtained on all the algorithms used - results in terms of the speedup obtained, bottleneck observed, cache hit rate, load distribution after work stealing, and then deduce the set of parameters required to be able to choose a specific scheduler for maximum performance.
-Hope to Achieve (125%):
+#### Hope to Achieve (125%):
 We want to develop a heuristic which will automate the selection of the most optimal work stealing algorithm for a given problem set. Basically, the analysis we manually perform above could then be fed as a set of rules to the heuristic, thereby enabling the user to get maximum performance even without knowing the internals.
 
 # Platform Choice:
@@ -67,7 +65,7 @@ Week 4	Run the different strategies on the benchmarks on various machines – GH
 Week 5	Finalize the Library API endpoints, and internally call the relevant algorithms (Integration Phase)
 Week 6	Finalize the Report, Deduce the Set of Parameters to select a logic and possibly add a simple heuristic with rules to select the same.
 
-References:
+# References:
 [1] Blumofe, R.D. and Leiserson, C.E., 1999. Scheduling multithreaded computations by work stealing. Journal of the ACM (JACM), 46(5), pp.720-748.
 [2] Chu G., Schulte C., Stuckey P.J. (2009) Confidence-Based Work Stealing in Parallel Constraint Programming. In: Gent I.P. (eds) Principles and Practice of Constraint Programming - CP 2009. CP 2009. Lecture Notes in Computer Science, vol 5732. Springer, Berlin, Heidelberg. https://doi.org/10.1007/978-3-642-04244-7_20
 [3] SC '09: Proceedings of the Conference on High Performance Computing Networking, Storage and Analysis November 2009 Article No.: 53Pages 1–11. https://doi.org/10.1145/1654059.1654113
