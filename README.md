@@ -67,7 +67,7 @@ Week 5  | Finalize the Library API endpoints, and internally call the relevant a
 Week 6  | Finalize the Report, Deduce the Set of Parameters to select a logic and possibly add a simple heuristic with rules to select the same.
 
 # References:
-[1] Blumofe, R.D. and Leiserson, C.E., 1999. Scheduling multithreaded computations by work stealing. Journal of the ACM (JACM), 46(5), pp.720-748.
+*[1] Blumofe, R.D. and Leiserson, C.E., 1999. Scheduling multithreaded computations by work stealing. Journal of the ACM (JACM), 46(5), pp.720-748.
 [2] Chu G., Schulte C., Stuckey P.J. (2009) Confidence-Based Work Stealing in Parallel Constraint Programming. In: Gent I.P. (eds) Principles and Practice of Constraint Programming - CP 2009. CP 2009. Lecture Notes in Computer Science, vol 5732. Springer, Berlin, Heidelberg. https://doi.org/10.1007/978-3-642-04244-7_20
 [3] SC '09: Proceedings of the Conference on High Performance Computing Networking, Storage and Analysis November 2009 Article No.: 53Pages 1–11. https://doi.org/10.1145/1654059.1654113
 [4] Yang, J., He, Q. Scheduling Parallel Computations by Work Stealing: A Survey. Int J Parallel Prog 46, 173–197 (2018). https://doi.org/10.1007/s10766-016-0484-8
