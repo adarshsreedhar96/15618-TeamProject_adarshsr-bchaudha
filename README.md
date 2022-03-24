@@ -17,20 +17,20 @@ There are several factors determining the best choice for a workload. Some of th
 o	The initial distribution of the tasks ensures that all processors/execution units are busy. A basic rule of thumb is to create at least as many tasks as there as number of threads, which should be at least as many as the execution units available.
 o	If we use a centralized queue, then threads can deque as and when they become idle, however the threads cause race conditions in dequeuing a task. Using individual task queues involve more work at the initial scheduling, as well as possibility of uneven work distribution.
 o	Task granularity is an important factor as well – a very large task may be shelved frequently due to context switching causing unnecessary I/O and increase in latency.
--	The Work Stealing algorithm 
-o	Since there is a communication penalty in stealing a task, the algorithm must factor whether the currently executing thread would still be occupied by the time the tasks have been brought to the new unit’s space completely and begins execution.
-o	Depending on the task granularity and the number of tasks available for stealing, we must also consider the number of tasks to steal – since it is faster to steal multiple tasks at once than at different intervals. It also depends on whether we steal multiple tasks from the same thread or individual tasks from various threads.
--	Inter-Processor Communication Cost
-o	As mentioned, transferring a task requires use of a bus, and perhaps even invalidation of cache in the original processor. 
-o	In cases where Non-Uniform Memory Access is used, it adds a greater penalty to shift the tasks as memory access becomes longer.
--	Data Locality
-o	If the computation operates on sequential data structures, then allocating contiguous ranges of data to tasks helps in improving cache hit performance. The work stealing algorithm must also take into factor the loss of locality as well as the communication costs before attempting to steal a task.
--	Work Thread Pool
-o	Creating a pool of threads before we scheduler the tasks help avoid expensive runtime costs in creating and deleting address-space/ signal-set and other resources for each task. This also helps reuse of the threads.
--	Nature of the Problem Definition
-o	As in the case of the Mandelbrot computation, we know that every pixel has a different convergence factor. This implies that each task may finish at different intervals, requiring a stealing logic. However, if the computation performed is around the same for any data, then all tasks are mostly completed on time, and work stealing is not required.
--	Size Complexity of the Result
-o	If the order of runtime for the logic is high such as O(n2) number of tasks are very high, the data structure size may increase and consume significant memory. The OS scheduler would also attempt to pause this process and run other processes, in which there is cache invalidations, and switching between primary and secondary memory as well, all of which contribute to significant increase in runtime. 
+##### -	The Work Stealing algorithm 
+Since there is a communication penalty in stealing a task, the algorithm must factor whether the currently executing thread would still be occupied by the time the tasks have been brought to the new unit’s space completely and begins execution.
+Depending on the task granularity and the number of tasks available for stealing, we must also consider the number of tasks to steal – since it is faster to steal multiple tasks at once than at different intervals. It also depends on whether we steal multiple tasks from the same thread or individual tasks from various threads.
+##### -	Inter-Processor Communication Cost
+As mentioned, transferring a task requires use of a bus, and perhaps even invalidation of cache in the original processor. 
+In cases where Non-Uniform Memory Access is used, it adds a greater penalty to shift the tasks as memory access becomes longer.
+##### -	Data Locality
+If the computation operates on sequential data structures, then allocating contiguous ranges of data to tasks helps in improving cache hit performance. The work stealing algorithm must also take into factor the loss of locality as well as the communication costs before attempting to steal a task.
+##### -	Work Thread Pool
+Creating a pool of threads before we scheduler the tasks help avoid expensive runtime costs in creating and deleting address-space/ signal-set and other resources for each task. This also helps reuse of the threads.
+##### -	Nature of the Problem Definition
+As in the case of the Mandelbrot computation, we know that every pixel has a different convergence factor. This implies that each task may finish at different intervals, requiring a stealing logic. However, if the computation performed is around the same for any data, then all tasks are mostly completed on time, and work stealing is not required.
+##### -	Size Complexity of the Result
+If the order of runtime for the logic is high such as O(n2) number of tasks are very high, the data structure size may increase and consume significant memory. The OS scheduler would also attempt to pause this process and run other processes, in which there is cache invalidations, and switching between primary and secondary memory as well, all of which contribute to significant increase in runtime. 
 As mentioned above, we need to able to make educated guesses on the right set of parameters to choose based on our dataset or processing logic – and adding this intelligence makes it a hard problem t resolve.
 
 # Resources
