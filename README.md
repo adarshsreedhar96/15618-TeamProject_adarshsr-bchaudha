@@ -58,7 +58,7 @@ The difference in the number of cores, as well as the size of L3 cache and RAM, 
 
 # Schedule
 | Week | Deliverables |
------------------------
+-------|----------------
 Week 1 |	Literature Survey Complete, and rough outline of the APIs to expose to the user, and the selection of work stealing algorithms + data structures to use to 
 maintain the tasks
 Week 2 | Implement a centralized deque from which all threads can steal tasks – and finalize the set of benchmarks to run on
