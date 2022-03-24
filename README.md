@@ -1,7 +1,7 @@
 ### Dynamic Scheduling with Work Stealing - Framework and Analysis of Different Strategies
 # 15618-TeamProject
-# Adarsh Sreedhar (adarshsr)
-# Bhakti Chaudhari (bchaudha)
+Adarsh Sreedhar (adarshsr)
+Bhakti Chaudhari (bchaudha)
 
 # Summary
 We are going to implement a dynamic scheduling framework with work stealing using different strategies, such as child-first, child-continuation, priority-based, randomly-chosen etc., and analyze their performance on various workloads to determine which strategy is best suited for a type of workload. 
@@ -34,7 +34,8 @@ o	If the order of runtime for the logic is high such as O(n2) number of tasks ar
 As mentioned above, we need to able to make educated guesses on the right set of parameters to choose based on our dataset or processing logic – and adding this intelligence makes it a hard problem t resolve.
 
 # Resources
-We have selected few papers for our literature survey. [1] attempts to study the problem of efficiently scheduling multithreaded computations on multiprocessors, and have come up with a set of theorems that explain the expected speedup in a mathematical form.
+We have selected few papers for our literature survey. 
+[1] attempts to study the problem of efficiently scheduling multithreaded computations on multiprocessors, and have come up with a set of theorems that explain the expected speedup in a mathematical form.
 [2] presents an interesting idea of confidence-based work stealing, wherein they deal with a problem of search i.e. an O(1) result by parallelly searching an O(n) space. We would like to implement our priority queue-based implementation based on this idea, i.e., to use a set of heuristics to change the priority and schedule work so as to find the result as quickly as possible.
 [3] attempts to explore randomized work stealing on large scale systems through use of Partitioned Global Address Space (PGAS). While the implementation is out of scope for our survey, they explore various benchmarks and make use of split task queues and lockless release operations, which we believe can prove to be an important resource for perusal.
 Lastly, [4] is a survey paper that reviews work stealing scheduling from the perspective of scheduling algorithms, optimization of algorithm implementation and processor architecture-oriented optimization. 
