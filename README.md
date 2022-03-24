@@ -13,10 +13,10 @@ We want to implement a workload sensitive scheduler with select work stealing st
 
 # The Challenge
 There are several factors determining the best choice for a workload. Some of them are:
--	The Scheduler
-o	The initial distribution of the tasks ensures that all processors/execution units are busy. A basic rule of thumb is to create at least as many tasks as there as number of threads, which should be at least as many as the execution units available.
-o	If we use a centralized queue, then threads can deque as and when they become idle, however the threads cause race conditions in dequeuing a task. Using individual task queues involve more work at the initial scheduling, as well as possibility of uneven work distribution.
-o	Task granularity is an important factor as well – a very large task may be shelved frequently due to context switching causing unnecessary I/O and increase in latency.
+##### -	The Scheduler
+The initial distribution of the tasks ensures that all processors/execution units are busy. A basic rule of thumb is to create at least as many tasks as there as number of threads, which should be at least as many as the execution units available.
+If we use a centralized queue, then threads can deque as and when they become idle, however the threads cause race conditions in dequeuing a task. Using individual task queues involve more work at the initial scheduling, as well as possibility of uneven work distribution.
+Task granularity is an important factor as well – a very large task may be shelved frequently due to context switching causing unnecessary I/O and increase in latency.
 ##### -	The Work Stealing algorithm 
 Since there is a communication penalty in stealing a task, the algorithm must factor whether the currently executing thread would still be occupied by the time the tasks have been brought to the new unit’s space completely and begins execution.
 Depending on the task granularity and the number of tasks available for stealing, we must also consider the number of tasks to steal – since it is faster to steal multiple tasks at once than at different intervals. It also depends on whether we steal multiple tasks from the same thread or individual tasks from various threads.
@@ -57,6 +57,8 @@ We will test our algorithms on the GHC, PSC and Latedays cluster. We will implem
 The difference in the number of cores, as well as the size of L3 cache and RAM, would also help us in robust testing of our framework
 
 # Schedule
+| Week | Deliverables |
+-----------------------
 Week	Deliverables
 Week 1	Literature Survey Complete, and rough outline of the APIs to expose to the user, and the selection of work stealing algorithms + data structures to use to maintain the tasks
 Week 2	Implement a centralized deque from which all threads can steal tasks – and finalize the set of benchmarks to run on
