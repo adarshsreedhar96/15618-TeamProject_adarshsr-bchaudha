@@ -95,3 +95,8 @@ Week 6  | Finalize the Report, Deduce the Set of Parameters to select a logic an
 # Revised Schedule - in half-week increments:
 | Week  | Deliverables |
 --------|---------------
+Apr13-16| Finish Per-thread Queue and Add support for client methods with arguments
+Apr17-20| Finish adding Work Stealing - exploring 2 different logic (which queue to check first, child-first and child-continuation)
+Apr22-25| Run benchmarks and get results - on different machines/architectures
+Apr26-29| Finalize API endpoints and integrate all methods
+Apr30-2 | Attempt heuristic/Wrapper, Finalize Report and Experiment Data
