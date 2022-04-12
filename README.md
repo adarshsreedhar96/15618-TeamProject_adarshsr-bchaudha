@@ -91,3 +91,7 @@ Week 6  | Finalize the Report, Deduce the Set of Parameters to select a logic an
 * List the issues that concerns you the most.
   - We have been told that this is a challenging project, and therefore running one week behind schedule is of high concern, and we need to plan our time better.
   - Unlike other projects where we have a sequential-first approach followed by parallelizing the code, this dives straight into providing access-safe datastrcutures, and we already faced many issues on using locks and atomic values. We are sure of running into more issues as we add work stealing logic.
+
+# Revised Schedule - in half-week increments:
+| Week  | Deliverables |
+--------|---------------
