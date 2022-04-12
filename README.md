@@ -73,3 +73,21 @@ Week 6  | Finalize the Report, Deduce the Set of Parameters to select a logic an
 * [4] Yang, J., He, Q. Scheduling Parallel Computations by Work Stealing: A Survey. Int J Parallel Prog 46, 173–197 (2018). https://doi.org/10.1007/s10766-016-0484-8
 * [5] PPOPP '95: Proceedings of the fifth ACM SIGPLAN symposium on Principles and practice of parallel programming August 1995 Pages 207–216. https://doi.org/10.1145/209936.209958
 * [6] Faxen, Karl-Filip. (2008). Wool-A work stealing library. SIGARCH Computer Architecture News. 36. 93-100. 10.1145/1556444.1556457.
+
+
+# Milestone
+* Summary of Work completed so far
+  We have implemented a thread pool, where each thread run an infinite loop, constantly checking the centralized queue for tasks. Once the client calls a submit method, the library submits the tasks onto the queue (currently using Round Robin Mechanism, depending on the indexes the user has given). Only after adding all 
+  entries to the queue, it sets an atomic value to true beyond which the threads actually begin to grab tasks from the queue. So far, we have been able to only support
+  methods without any arguments, but have a rough idea on adding support for that. 
+  We have also implemented a per-thread queue (without any locks) and are currently placing tasks into each queue before setting the atomic value to true, but are running into few errors. We anticipate this to be resolved soon, after which the threads will grab tasks from their own queue and after being emptied look into other thread's queues.
+* Progress so far wrt to the planned schedule of tasks above:
+  We are running One week behind schedule, i.e. by Week 3, we were supposed to have child-first and child-continuation stealing implemented, however we are yet to add stealing policies on top of our task-grabbing threads.
+* What do you plan for the poster session?
+  We plan to have results of different work stealing policies run on various benchmarks and demonstrate the types of applications and their relations to different
+  work stealing policies that give maximum performance. Hopefully, we should be able to make the library functioning and for use by others.
+* Do you have any preliminary results at this time?
+  Not yet. We do have finalized some benchmarks - Mandelbrot (for inequal computation), Binary Search (For single search output space) and Matrix Multiplication (For   Equal Computation). We will add more as required - since priority-based computation needs a good benchmark.
+* List the issues that concerns you the most.
+  - We have been told that this is a challenging project, and therefore running one week behind schedule is of high concern, and we need to plan our time better.
+  - Unlike other projects where we have a sequential-first approach followed by parallelizing the code, this dives straight into providing access-safe datastrcutures, and we already faced many issues on using locks and atomic values. We are sure of running into more issues as we add work stealing logic.
