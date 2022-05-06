@@ -57,9 +57,9 @@ public:
             args[i] = (WorkerArgs *)malloc(sizeof(WorkerArgs));
             args[i]->threadId = i;
             args[i]->x0 = x0;
-            args[i]->y0 = y0;
+            args[i]->y0 = y00;
             args[i]->x1 = x1;
-            args[i]->y1 = y1;
+            args[i]->y1 = y11;
             args[i]->height = height;
             args[i]->width = width;
             args[i]->maxIterations = maxIterations;

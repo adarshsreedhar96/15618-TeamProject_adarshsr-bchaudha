@@ -54,7 +54,6 @@ public:
     // once queue returns empty, then we break the loop and exit function, depending on value of breakFlag
     void worker(int index)
     {
-        printf("worker() called with thread_id: %d\n", index);
         while (true)
         {
             if (runningFlag)
