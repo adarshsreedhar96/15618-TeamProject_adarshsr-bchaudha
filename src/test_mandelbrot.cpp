@@ -20,11 +20,11 @@ int main(int argc, char **argv)
 {
     const int numOfThreads = atoi(argv[1]);
     int numberOfTasks = atoi(argv[2]);
-    scaleAndShift(x0, x1, y0, y1, scaleValue, shiftX, shiftY);
+    scaleAndShift(x0, x1, y00, y11, scaleValue, shiftX, shiftY);
 
     // run serial
     memset(output_serial, 0, width * height * sizeof(int));
-    mandelbrotSerial(x0, y0, x1, y1, width, height, 0, height, maxIterations, output_serial);
+    mandelbrotSerial(x0, y00, x1, y11, width, height, 0, height, maxIterations, output_serial);
 
     int viewIndex = 1;
     Mandelbrot mandelbrot;

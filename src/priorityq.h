@@ -27,7 +27,6 @@ private:
      * @brief A mutex to synchronize access to the task queue
      * by different threads.
      */
-    // why is it mutable though
     std::mutex *queue_mutex;
     // methods
 public:
@@ -65,7 +64,6 @@ public:
                 }
             }
             Task dequeuedTask = tasks.at(idx);
-            // std::remove(tasks.begin(), tasks.end(), dequeuedTask);
             tasks.erase(tasks.begin() + idx);
             *args = dequeuedTask.args;
             return true;

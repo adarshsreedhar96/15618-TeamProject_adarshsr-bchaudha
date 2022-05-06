@@ -22,10 +22,6 @@ public:
     } matrixmul;
     void setInput(int *mat1arg, int *mat2arg, int n)
     {
-        // this->mat1 = (int *)malloc(sizeof(int) * n * n);
-        // this->mat2 = (int *)malloc(sizeof(int) * n * n);
-        // memcpy(this->mat1, mat1, sizeof(int) * n * n);
-        // memcpy(this->mat2, mat2, sizeof(int) * n * n);
         this->mat1 = mat1arg;
         this->mat2 = mat2arg;
         this->size = n;
@@ -33,7 +29,6 @@ public:
 
     static void workerTask(void *threadArgs)
     {
-        printf("workerThreadStart called by thread: %d\n", std::this_thread::get_id());
         matrixmul *args = static_cast<matrixmul *>(threadArgs);
         for (int i = 0; i < args->size; i++)
         {

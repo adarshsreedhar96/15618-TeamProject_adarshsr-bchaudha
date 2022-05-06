@@ -49,13 +49,4 @@ int main(int argc, char **argv)
     threadPool.clearTasks();
     auto end_time = std::chrono::high_resolution_clock::now();
     printf("time diff: %d\n", std::chrono::duration_cast<std::chrono::nanoseconds>(end_time - start_time).count());
-    // for (int i = 0; i < size; i++)
-    // {
-    //     for (int j = 0; j < size; j++)
-    //     {
-    //         int *temp = args[0]->output + ((i)*args[0]->size) + j;
-    //         printf("%d ", *temp);
-    //     }
-    //     printf("\n");
-    // }
 }

@@ -110,8 +110,6 @@ public:
                 tasksWithTaskStruct.pop();
                 stolenTasks->push_back(dequeuedTask);
             }
-            // task = dequeuedTask.task;
-            //*args = dequeuedTask.args;
             return true;
         }
     }

@@ -40,5 +40,4 @@ int main(int argc, char **argv)
     threadPool.clearTasks();
     auto end_time = std::chrono::high_resolution_clock::now();
     printf("time diff: %f\n", std::chrono::duration<double, std::milli>(end_time - start_time).count());
-    // printf("time diff: %d\n", std::chrono::duration_cast<std::chrono::nanoseconds>(end_time-start_time).count());
 }

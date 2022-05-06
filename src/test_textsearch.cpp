@@ -6,7 +6,7 @@
 #include <thread>
 #include <string.h>
 #include <cstdlib>
-#include "random.h"
+#include "searchtext.h"
 
 #define PERTHREAD_QUEUE 0
 #define PRIORITY_QUEUE 1
@@ -55,5 +55,5 @@ int main(int argc, char **argv)
     threadPool.clearTasks();
     auto end_time = std::chrono::high_resolution_clock::now();
     printf("time diff: %f\n", std::chrono::duration<double, std::milli>(end_time - start_time).count());
-    printf("was i found? %d\n", result);
+    printf("was word found? %d\n", result);
 }
